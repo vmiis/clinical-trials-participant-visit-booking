@@ -39,30 +39,6 @@
     		});
     	};
     	//-----------------------------------
-		/*
-    	var put_on_bookings=function(){
-            var sql="select ID,V1,Information from [TABLE-"+booking_recort_tid+"] where DT1=@T1 order by S1";
-            $VmAPI.request({data:{cmd:'query_records',sql:sql,t1:$('#date__ID').val()},callback:function(res){
-        		for(var i=0;i<res.records.length;i++){
-        			var cc="#EEEEEE"; if(i%2===0) cc="#ffffff";
-                    var rid         =res.records[i].ID;
-                    var time    	=res.records[i].Time;
-                    var description =res.records[i].Description;
-                    var color       =res.records[i].Color;
-                    var aa          =time.split(':');
-                    var startmargin =100*(parseInt(aa[0])+(parseInt(aa[1])/60)-8)/12;
-        			var txt="<div style='background-color:"+cc+";position: relative;'>";
-                    txt+="<div style='position:relative;z-index:10;margin-left:"+startmargin+"%'><u id=B"+rid+" style='cursor:pointer;color:"+color+"'>"+$vm.time12(time)+"&nbsp;&nbsp;&nbsp;"+description+"</u></div>";
-                    txt+="</div>";
-                    var $td=$('#table__ID').find('tbody tr:last').find('td').eq(0);
-        			$td.append(txt);
-                    $('#B'+rid).data('rid',rid);
-                    $('#B'+rid).on('click',on_click_edit_fun);
-        		}
-    		}});
-    	};
-		*/
-    	//-----------------------------------
 		var put_on_bookings=function(){
         	var sql="select ID,V1,Information from [TABLE-"+booking_recort_tid+"] where DT1=@T1 order by S1";
             $VmAPI.request({data:{cmd:'query_records',sql:sql,t1:$('#date__ID').val()},callback:function(res){
@@ -78,7 +54,7 @@
                     var duration    =100*parseInt(duration_0)/720;
 
         			var txt="<div style='background-color:"+cc+";position: relative;'>";
-                    txt+="<div style='position:relative;z-index:10;color:#fff;margin-left:"+startmargin+"%'><u id=B"+rid+" style='cursor:pointer'>"+$vm.time12(time)+"&nbsp;&nbsp;&nbsp;"+Participant+"</u></div>";
+                    txt+="<div style='position:relative;z-index:10;margin-left:"+startmargin+"%'><u id=B"+rid+" style='cursor:pointer'>"+$vm.time12(time)+"&nbsp;&nbsp;&nbsp;"+Participant+"</u></div>";
                     txt+="<div class=time__ID style='margin-left:"+startmargin+"%; width:"+duration+"%; background-color: "+color+"'>&nbsp;</div>";
                     txt+="</div>";
                     var $td=$('#table__ID').find('tbody tr:last').find('td').eq(0);

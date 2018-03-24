@@ -35,8 +35,8 @@
             var d=record.Date;
 
             var $div=_get_cell_div(d);
-    	    var info="<span  style=color:"+color+">"+time+" - "+name+"</span>";
-            var booking="<div class=event__ID data-author="+author+" id=booking__ID"+id+">"+info+"</div>";
+            var info="<span  style=color:#000>"+time+" - "+name+"</span>";
+            var booking="<div class=event__ID style='background-color:"+color+"' data-author="+author+" id=booking__ID"+id+">"+info+"</div>";
     		$div.append(booking);
     		$('#booking__ID'+id).on('click',function(){
                 $vm.nav_load_module(prefix+'booking-record','hidden',{sql_where:' id='+id});

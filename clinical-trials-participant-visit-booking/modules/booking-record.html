@@ -36,6 +36,38 @@
                 case 'Time':
                     VmInclude:__COMPONENT__/grid/field_time.js
                     break;
+                case 'Hours':
+                    var html="<select style='border:0;'>\
+                        <option>0</option>\
+                        <option>1</option>\
+                        <option>2</option>\
+                        <option>3</option>\
+                        <option>4</option>\
+                        <option>5</option>\
+                        <option>6</option>\
+                        <option>7</option>\
+                        <option>8</option>\
+                        <option>9</option>\
+                        </select>";
+                    VmInclude:__COMPONENT__/grid/field_select.js
+                    break;
+                case 'Minutes':
+                    var html="<select style='border:0;'>\
+                        <option>0</option>\
+                        <option>5</option>\
+                        <option>10</option>\
+                        <option>15</option>\
+                        <option>20</option>\
+                        <option>25</option>\
+                        <option>30</option>\
+                        <option>35</option>\
+                        <option>40</option>\
+                        <option>45</option>\
+                        <option>50</option>\
+                        <option>55</option>\
+                        </select>";
+                    VmInclude:__COMPONENT__/grid/field_select.js
+                    break;
                 case 'Color':
                     VmInclude:__COMPONENT__/grid/field_color.js
                     break;
@@ -60,7 +92,7 @@
             _records[0].Time=$vm.vm['__ID'].op.input.time;
             _records[0].Hours="2";
             _records[0].Minutes="0";
-            _records[0].Color="#008000";
+            _records[0].Color="#80FF80";
         }
         //-------------------------------------
         _set_req=function(){
